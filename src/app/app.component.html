@@ -21,7 +21,9 @@
   *ngFor para realizar un for
  -->
 <ul>
+  <li *ngIf="items.length === 0">La lista esta vacias</li>
   <li *ngFor="let name of items; index as i">
     {{i}} {{ name }}
+    <button (click)="deleteItem(i)">delete</button>
   </li>
 </ul>

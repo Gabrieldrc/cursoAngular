@@ -11,4 +11,7 @@ export class AppComponent {
   addItem() {
     this.items.push(this.title)
   }
+  deleteItem(index: number) {
+    this.items.splice(index, 1);
+  }
 }
