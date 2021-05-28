@@ -1,5 +1,15 @@
 <!-- Esto es string interpolation -->
 <h1>{{title}}</h1>
-<!-- ngModel es una directiva que trabaja en los formularios -->
+<!--
+  ngModel es una directiva que trabaja en los
+  formularios
+-->
 <input type="text" [(ngModel)]="title">
+<!--
+  *ngIf sirve para que el elemento solo se imprima
+  si se cumple la condicion
+-->
+<div *ngIf="title === 'div'">
+  Esto es un div
+</div>
 
