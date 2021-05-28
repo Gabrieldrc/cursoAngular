@@ -12,4 +12,16 @@
 <div *ngIf="title === 'div'">
   Esto es un div
 </div>
-
+<!--
+  Ejemplo de que si apretan click ejecuta el metodo
+  addItem
+ -->
+<button (click)="addItem()">Add item</button>
+<!--
+  *ngFor para realizar un for
+ -->
+<ul>
+  <li *ngFor="let name of items; index as i">
+    {{i}} {{ name }}
+  </li>
+</ul>

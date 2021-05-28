@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'platzi-store';
+  items = ['gabriel', 'gabriela', 'gabrielle']
+  addItem() {
+    this.items.push(this.title)
+  }
 }
