@@ -27,3 +27,12 @@
     <button (click)="deleteItem(i)">delete</button>
   </li>
 </ul>
+<div *ngFor="let product of products">
+  {{ product.title }}
+<!--
+  Si queremos agregar una variable dentro de un atributo
+  colocamos los corchetes
+ -->
+  <img [src]="product.image" alt="">
+  {{ product.price }}
+</div>
