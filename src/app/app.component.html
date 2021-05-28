@@ -13,6 +13,15 @@
   Esto es un div
 </div>
 <!--
+  Esto es un ejemplo de un switch
+ -->
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'parrafo'">parrafo</p>
+  <p *ngSwitchCase="'titulo'">titulo</p>
+  <p *ngSwitchCase="'div'">div</p>
+  <p *ngSwitchDefault>no hay match</p>
+</div>
+<!--
   Ejemplo de que si apretan click ejecuta el metodo
   addItem
  -->
