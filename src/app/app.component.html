@@ -1,10 +1,6 @@
 <!-- Esto es string interpolation -->
 <h1>{{title}}</h1>
 <!--
-  Agregamos un componente
- -->
-<app-product></app-product>
-<!--
   ngModel es una directiva que trabaja en los
   formularios
 -->
@@ -41,5 +37,5 @@
   </li>
 </ul>
 <div *ngFor="let product of products">
-
+  <app-product [product]="product"></app-product>
 </div>
