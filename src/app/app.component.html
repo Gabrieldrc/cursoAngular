@@ -37,5 +37,8 @@
   </li>
 </ul>
 <div *ngFor="let product of products">
-  <app-product [product]="product"></app-product>
+  <app-product
+    [product]="product"
+    (productClicked)="clickedProduct($event)"
+  ></app-product>
 </div>
