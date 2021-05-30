@@ -27,9 +27,6 @@
   display: grid;
   grid-template-columns: 1fr;
   button {
-    background-color: colors.$blue-l;
-    color: white;
-    border: unset;
-    @include mixins.border-r;
+    @include mixins.button;
   }
 }

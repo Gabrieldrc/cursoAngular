@@ -1,3 +1,17 @@
+@use './colors';
+
 @mixin border-r {
   border-radius: 5px;
+}
+@mixin marginy-auto {
+  margin: 0 auto;
+}
+@mixin margin-auto {
+  margin: auto;
+}
+@mixin button {
+  background-color: colors.$blue-l;
+    color: white;
+    border: unset;
+    @include border-r;
 }
