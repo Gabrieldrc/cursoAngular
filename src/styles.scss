@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@use './app/styles/fonts';
+@use './app/styles/_fonts';
 @use './app/styles/_sizes';
+@import '~swiper/swiper-bundle';
 
 %marginy-auto {
   margin: 0 auto;
