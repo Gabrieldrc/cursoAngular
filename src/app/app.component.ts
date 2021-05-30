@@ -8,7 +8,7 @@ import { Product } from './models/product.models';
 })
 export class AppComponent {
   title = 'platzi-store';
-  items = ['gabriel', 'gabriela', 'gabrielle']
+  power = 10;
   products: Product[] = [
     {
       id: '2',
@@ -46,12 +46,6 @@ export class AppComponent {
       description: 'bla bla bla bla bla'
     }
   ];
-  addItem() {
-    this.items.push(this.title)
-  }
-  deleteItem(index: number) {
-    this.items.splice(index, 1);
-  }
   clickedProduct(id: number) {
     console.log('producto', id)
   }
