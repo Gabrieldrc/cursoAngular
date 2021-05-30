@@ -1,45 +1,7 @@
-<!-- Esto es string interpolation -->
-<h1>{{title}}</h1>
-<!--
-  ngModel es una directiva que trabaja en los
-  formularios
--->
-<input type="text" [(ngModel)]="title">
-<!--
-  *ngIf sirve para que el elemento solo se imprima
-  si se cumple la condicion
--->
-<div *ngIf="title === 'div'">
-  Esto es un div
-</div>
-<!--
-  Esto es un ejemplo de un switch
- -->
-<div [ngSwitch]="title">
-  <p *ngSwitchCase="'parrafo'">parrafo</p>
-  <p *ngSwitchCase="'titulo'">titulo</p>
-  <p *ngSwitchCase="'div'">div</p>
-  <p *ngSwitchDefault>no hay match</p>
-</div>
-<!--
-  Ejemplo de que si apretan click ejecuta el metodo
-  addItem
- -->
-<button (click)="addItem()">Add item</button>
-<!--
-  *ngFor para realizar un for
- -->
-<ul>
-  <li *ngIf="items.length === 0">La lista esta vacias</li>
-  <li *ngFor="let name of items; index as i">
-    {{i}} {{ name }}
-    <button (click)="deleteItem(i)">delete</button>
-  </li>
-</ul>
-<div class="product-grid">
+<section class="product-grid">
   <app-product
     *ngFor="let product of products"
     [product]="product"
     (productClicked)="clickedProduct($event)"
   ></app-product>
-</div>
+</section>

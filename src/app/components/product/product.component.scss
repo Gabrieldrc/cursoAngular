@@ -1,0 +1,32 @@
+@use '../../styles/colors';
+:host {
+  margin: 5px;
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  box-shadow: 2px 2px 2px 1px lightgray, -2px -2px 2px 1px lightgray;
+}
+.product-image-container {
+  display: flex;
+  align-items: center;
+  img {
+    max-width: 100%;
+  }
+}
+.product-details-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 2px 4px;
+}
+.product-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.product-button {
+  display: grid;
+  grid-template-columns: 1fr;
+  button {
+    background-color: colors.$blue-l;
+    color: white;
+    border: unset;
+  }
+}
