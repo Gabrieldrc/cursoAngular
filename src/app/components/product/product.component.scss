@@ -1,9 +1,11 @@
 @use '../../styles/colors';
+@use '../../styles/mixins';
 :host {
   margin: 5px;
   display: grid;
   grid-template-rows: 4fr 1fr;
   box-shadow: 2px 2px 2px 1px lightgray, -2px -2px 2px 1px lightgray;
+  @include mixins.border-r;
 }
 .product-image-container {
   display: flex;
@@ -28,5 +30,6 @@
     background-color: colors.$blue-l;
     color: white;
     border: unset;
+    @include mixins.border-r;
   }
 }

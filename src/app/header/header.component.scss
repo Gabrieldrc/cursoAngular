@@ -1,0 +1,24 @@
+@use '../styles/colors';
+:host {
+  background-color: colors.$blue-d;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+}
+nav {
+  grid-column: 2;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  a {
+    color: white;
+    padding: 5px 15px;
+    text-decoration: none;
+    align-content: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    &.active {
+      color: colors.$green;
+      border-bottom: 1px solid colors.$green;
+    }
+  }
+}
