@@ -3,13 +3,11 @@ import {
   Input,
   Output,
   EventEmitter,
-  OnChanges,
-  SimpleChanges,
   OnInit,
   DoCheck,
   OnDestroy} from '@angular/core';
 
-import { Product } from '../../models/product.models';
+import { Product } from '../models/product.models';
 
 @Component({
   selector: 'app-product',

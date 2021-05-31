@@ -1,5 +1,5 @@
-@use '../styles/colors';
-@use '../styles/sizes';
+@use '../../../styles/colors';
+@use '../../../styles/sizes';
 :host {
   background-color: colors.$blue-d;
   display: grid;
