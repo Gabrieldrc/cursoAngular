@@ -4,7 +4,6 @@ import { ContactComponent } from './contact/contact.component';
 import { LayoutComponent } from './layout/layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {
@@ -23,7 +22,8 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductsComponent
+        loadChildren: () => import('./products/products.module')
+          .then(m => m.ProductsModule),
       },
       {
         path: 'products/:id',
