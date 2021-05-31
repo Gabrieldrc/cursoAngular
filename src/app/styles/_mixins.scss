@@ -9,9 +9,13 @@
 @mixin margin-auto {
   margin: auto;
 }
-@mixin button {
-  background-color: colors.$blue-l;
-    color: white;
-    border: unset;
-    @include border-r;
+@mixin button($color: colors.$blue-l) {
+  background-color: $color;
+  color: white;
+  border: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px;
+  @include border-r;
 }

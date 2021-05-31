@@ -3,7 +3,7 @@
 :host {
   margin: 5px;
   display: grid;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows: 3fr 1fr;
   box-shadow: 2px 2px 2px 1px lightgray, -2px -2px 2px 1px lightgray;
   @include mixins.border-r;
 }
@@ -22,6 +22,13 @@
 .product-details {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  a {
+    font-size: 1.8rem;
+    color: black;
+    &:hover, &:focus {
+      color: colors.$green;
+    }
+  }
 }
 .product-button {
   display: grid;

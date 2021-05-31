@@ -1,1 +1,11 @@
-<p>product-detail works!</p>
+<app-header></app-header>
+<section>
+  <img [src]="product.image" alt="imagen del producto">
+</section>
+<section>
+  <ul>
+    <li>{{product.title}}</li>
+    <li>{{product.price | currency:'EUR'}}</li>
+  </ul>
+  <p>{{ product.description }}</p>
+</section>
