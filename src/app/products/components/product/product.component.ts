@@ -3,9 +3,7 @@ import {
   Input,
   Output,
   EventEmitter,
-  OnInit,
-  DoCheck,
-  OnDestroy} from '@angular/core';
+  } from '@angular/core';
 
 import { Product } from '../../../models/product.models';
 
@@ -14,24 +12,11 @@ import { Product } from '../../../models/product.models';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit, DoCheck, OnDestroy {
+export class ProductComponent {
   @Input() product: Product;
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
-  constructor() {
-    console.log('1. constructor')
-  }
-  // ngOnChanges(changes: SimpleChanges) {
-  //   console.log('2. ngOnChanges', changes)
-  // }
-  ngOnInit() {
-    console.log('3. ngOnInit')
-  }
-  ngDoCheck() {
-    console.log('4. ngDoCheck')
-  }
-  ngOnDestroy() {
-    console.log('5. ngOnDestroy')
-  }
+  constructor() {}
+
   addCart() {
     console.log("AÑADIR AL CARRITO")
     this.productClicked.emit(this.product.id)

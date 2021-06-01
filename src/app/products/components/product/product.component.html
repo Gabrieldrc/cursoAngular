@@ -8,7 +8,8 @@
     </a>
     <span>{{ product.price | currency:'EUR'}}</span>
   </div>
-  <div class="product-button">
-    <button (click)="addCart()">Agregar al carrito</button>
-  </div>
+  <button
+    (click)="addCart()"
+    mat-flat-button color="primary"
+  >Agregar al carrito</button>
 </div>
