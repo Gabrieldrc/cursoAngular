@@ -1,22 +1,27 @@
 @use '../../../styles/colors';
-@use '../../../styles/sizes';
+@use '../../../styles/mixins';
+
 :host {
   position: fixed;
-  top: 0;
+  bottom: 0;
   width: 100%;
   z-index: 999999999;
-  background-color: colors.$blue-d;
-  color: white;
 }
 .example-spacer {
   flex: 1 1 auto;
 }
-#menu {
-  display: none;
+.nav {
+  background-color: colors.$blue-d;
+  color: white;
 }
 a {
   &.active {
     color: colors.$green;
     border-bottom: 1px solid colors.$green;
+  }
+}
+@include mixins.media("tablet") {
+  :host {
+    top: 0;
   }
 }

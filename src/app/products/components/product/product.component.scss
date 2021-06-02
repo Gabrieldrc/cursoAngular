@@ -1,40 +1,39 @@
 @use '../../../styles/colors';
 @use '../../../styles/mixins';
 
-:host {
-  margin: 5px;
-  display: grid;
-  grid-template-rows: 3fr 1fr;
-  box-shadow: 2px 2px 2px 1px lightgray, -2px -2px 2px 1px lightgray;
-  @include mixins.border-r;
+.example-card {
+  max-width: 400px;
+}
+a {
+  font-size: 1.8rem;
+  color: black;
+  &:hover, &:focus {
+    color: colors.$green;
+  }
 }
 .product-image-container {
-  display: flex;
+  height: 200px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
   align-items: center;
-  img {
+  & img {
+    height: inherit;
+    width: auto;
     max-width: 100%;
   }
 }
-.product-details-container {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  padding: 2px 4px;
-}
-.product-details {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  a {
-    font-size: 1.8rem;
-    color: black;
-    &:hover, &:focus {
-      color: colors.$green;
-    }
+.product-actions {
+  button {
+    background-color: colors.$blue-l;
+    color: white;
   }
 }
-.product-button {
-  display: grid;
-  grid-template-columns: 1fr;
-  button {
-    @include mixins.button;
+@include mixins.media("desktop") {
+  .product-image-container {
+    & img {
+      height: auto;
+      width: 100%;
+    }
   }
 }

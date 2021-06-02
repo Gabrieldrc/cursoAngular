@@ -1,0 +1,8 @@
+@use '../styles/mixins';
+@use '../styles/sizes';
+
+@include mixins.media ("tablet") {
+  main {
+    margin-top: sizes.$heightHeader;
+  }
+}
