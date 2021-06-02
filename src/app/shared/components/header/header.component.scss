@@ -1,34 +1,22 @@
 @use '../../../styles/colors';
 @use '../../../styles/sizes';
 :host {
-  background-color: colors.$blue-d;
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 25%);
-  height: sizes.$height-header;
   z-index: 999999999;
+  background-color: colors.$blue-d;
+  color: white;
 }
-nav {
-  grid-column: 2;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 10px;
-  a {
-    height: 100%;
-    color: white;
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 1.8rem;
-    font-weight: 700;
-    &.active {
-      color: colors.$green;
-      border-bottom: 1px solid colors.$green;
-    }
+.example-spacer {
+  flex: 1 1 auto;
+}
+#menu {
+  display: none;
+}
+a {
+  &.active {
+    color: colors.$green;
+    border-bottom: 1px solid colors.$green;
   }
 }
