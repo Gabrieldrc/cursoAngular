@@ -32,10 +32,18 @@
       </div>
     </section>
     <section>
-      <div>
+      <form>
         <h3>Contacto</h3>
-        <input type="text">
-      </div>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput
+            [formControl]="emailField"
+            type="email"
+            placeholder="example@email.com"
+          >
+        </mat-form-field>
+        <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()">Enviar</button>
+      </form>
     </section>
   </div>
 </footer>

@@ -21,7 +21,11 @@ footer {
     color: white;
   }
 }
-
+form {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+}
 @include mixins.media('desktop') {
   footer .row {
     grid-template-columns: 1fr 1fr 1fr;
