@@ -1,8 +1,7 @@
-<app-header></app-header>
-<section>
+<section *ngIf="product">
   <img [src]="product.image" alt="imagen del producto">
 </section>
-<section>
+<section *ngIf="product">
   <ul>
     <li>{{product.title}}</li>
     <li>{{product.price | currency:'EUR'}}</li>

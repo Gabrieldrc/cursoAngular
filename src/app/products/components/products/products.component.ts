@@ -11,14 +11,18 @@ export class ProductsComponent implements OnInit {
   products: Product[];
   constructor(
     private productsSerivce: ProductsService
-  ){
-    this.products = productsSerivce.getAllProducts();
-  }
+  ){}
   clickedProduct(id: number) {
     console.log('producto', id)
   }
 
   ngOnInit(): void {
+    this.fetchProducts()
   }
-
+  fetchProducts() {
+    this.productsSerivce.getAllProducts()
+      .subscribe(products => {
+        this.products = products;
+      });
+  }
 }

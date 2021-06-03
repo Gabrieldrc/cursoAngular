@@ -3,6 +3,6 @@
 
 @include mixins.media ("tablet") {
   main {
-    margin-top: sizes.$heightHeader;
+    margin-top: sizes.$heightHeader + 50px;
   }
 }
