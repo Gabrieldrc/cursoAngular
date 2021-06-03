@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/core/services/product/products.service';
+import { MyValidators } from 'src/app/utils/validators';
 
 @Component({
   selector: 'app-product-form',
@@ -25,7 +26,7 @@ export class ProductFormComponent {
     this.formGroup = this.fb.group({
       id: ['', Validators.required],
       title: ['', Validators.required],
-      price: ['', Validators.required],
+      price: ['', [Validators.required, MyValidators.isPriceValid]],
       image: [''],
       description: ['', Validators.required],
     });
@@ -36,6 +37,8 @@ export class ProductFormComponent {
       this.productsService.createProduct(this.formGroup.value)
         .subscribe(response => this.router.navigate(['/admin/products']));
     }
-
+  }
+  get priceField() {
+    return this.formGroup.get('price');
   }
 }
