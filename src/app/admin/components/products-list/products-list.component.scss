@@ -1,0 +1,18 @@
+@use '../../../styles/mixins';
+
+.products-list-table {
+  width: 100%;
+}
+
+@include mixins.media("tablet") {
+  .products-list-table {
+    width: 90%;
+    margin: 20px auto;
+  }
+}
+@include mixins.media("desktop") {
+  .products-list-table {
+    max-width: 400px;
+    margin: 50px auto;
+  }
+}

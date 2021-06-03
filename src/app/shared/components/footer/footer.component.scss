@@ -1,0 +1,30 @@
+@use '../../../styles/colors';
+@use '../../../styles/mixins';
+
+footer {
+  padding: 50px 0px;
+  margin-top: 20px;
+  background: colors.$header-bc;
+  display: grid;
+  grid-template-rows: 1fr;
+  color: white;
+  .row {
+    display: inherit;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 20px 0;
+  }
+  ul {
+    list-style: none;
+  }
+  a {
+    color: white;
+  }
+}
+
+@include mixins.media('desktop') {
+  footer .row {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
