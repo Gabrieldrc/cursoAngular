@@ -4,6 +4,7 @@ import {
   Output,
   EventEmitter,
   } from '@angular/core';
+import { CartService } from 'src/app/core/services/cart.service';
 
 import { Product } from '../../../models/product.models';
 
@@ -15,10 +16,12 @@ import { Product } from '../../../models/product.models';
 export class ProductComponent {
   @Input() product: Product;
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
-  constructor() {}
+  constructor(
+    private cartService: CartService,
+  ) {}
 
   addCart() {
     console.log("AÑADIR AL CARRITO")
-    this.productClicked.emit(this.product.id)
+    this.cartService.addCart(this.product);
   }
 }
