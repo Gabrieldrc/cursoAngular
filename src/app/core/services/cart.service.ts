@@ -16,4 +16,15 @@ export class CartService {
     this.products = [...this.products, product];
     this.cart.next(this.products);
   }
+  removeFromCart(product: Product) {
+    let index = this.products.indexOf(product);
+    this.products.splice(index, 1)
+    this.cart.next(this.products);
+  }
+  deleteProduct(id: string) {
+    this.products = this.products.filter(product => {
+      return product.id !== id
+    });
+    this.cart.next(this.products);
+  }
 }
