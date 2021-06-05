@@ -18,11 +18,11 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addProduct(product) {
-
+  addProduct(id: string) {
+    this.cartService.addFromCart(id);
   }
-  substractProduct(product) {
-
+  substractProduct(id: string) {
+    this.cartService.removeFromCart(id);
   }
   deleteProduct(id: string) {
     this.cartService.deleteProduct(id);

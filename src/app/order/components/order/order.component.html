@@ -16,9 +16,9 @@
                 <h3>{{product.title}}</h3>
               </div>
               <div class="product-quantity">
-                <button mat-button><mat-icon>remove</mat-icon></button>
+                <button (click)="substractProduct(product.id)" mat-button><mat-icon>remove</mat-icon></button>
                 <span>{{ product.quantity }}</span>
-                <button mat-button><mat-icon>add</mat-icon></button>
+                <button (click)="addProduct(product.id)" mat-button><mat-icon>add</mat-icon></button>
               </div>
               <div class="product-price">
                 <span>{{(product.price * product.quantity) | currency:'EUR'}}</span>
