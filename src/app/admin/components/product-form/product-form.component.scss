@@ -11,6 +11,9 @@
 .full-wdth {
   width: 100%;
 }
+img {
+  width: 100%;
+}
 @include mixins.media("tablet") {
   .break {
     grid-template-rows: initial;

@@ -40,6 +40,13 @@
           <textarea matInput rows="5" formControlName="description"></textarea>
         </mat-form-field>
       </div>
+      <div>
+        <img *ngIf="(image$ | async) as image" [src]="image" alt="">
+        <input
+          type="file"
+          (change)="uploadFile($event)"
+          >
+      </div>
     </mat-card-content>
     <mat-card-actions>
       <button
