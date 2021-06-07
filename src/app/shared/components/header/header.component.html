@@ -1,0 +1,13 @@
+<mat-toolbar class="nav">
+  <mat-toolbar-row>
+    <span>Platzi-store</span>
+    <span class="example-spacer"></span>
+    <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+    <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
+    <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+    <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn" matBadgePosition="before" >
+      <mat-icon>shopping_cart</mat-icon>
+      Carrito
+    </a>
+  </mat-toolbar-row>
+</mat-toolbar>

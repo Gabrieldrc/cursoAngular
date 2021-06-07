@@ -1,0 +1,46 @@
+<mat-horizontal-stepper linear #stepper>
+  <mat-step>
+    <ng-template matStepLabel>Sus productos</ng-template>
+    <div *ngIf="(products$ | async) as products">
+      <span *ngIf="products.length === 0">El carrito esta vacio</span>
+      <ul>
+        <!-- *ngFor="let product of (products | productQuantity)" -->
+        <li *ngFor="let product of (products | productQuantity)">
+          <div class="product-item-container">
+            <div class="product-details-container">
+              <div class="product-details">
+                <picture>
+                  <!-- ../../../../assets/images/camiseta.png -->
+                  <img [src]="product.image" [alt]="product.title">
+                </picture>
+                <h3>{{product.title}}</h3>
+              </div>
+              <div class="product-quantity">
+                <button (click)="substractProduct(product.id)" mat-button><mat-icon>remove</mat-icon></button>
+                <span>{{ product.quantity }}</span>
+                <button (click)="addProduct(product.id)" mat-button><mat-icon>add</mat-icon></button>
+              </div>
+              <div class="product-price">
+                <span>{{(product.price * product.quantity) | currency:'EUR'}}</span>
+              </div>
+            </div>
+            <div class="product-actions">
+              <button mat-button>
+                <mat-icon (click)="deleteProduct(product.id)">delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Datos personales</ng-template>
+    <h1>Datos</h1>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel> Pago</ng-template>
+    <h1>Mas Datos</h1>
+  </mat-step>
+</mat-horizontal-stepper>

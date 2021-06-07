@@ -1,0 +1,30 @@
+// --Size
+$xl: 3rem;
+$l: 2.4rem;
+$m: 1.8rem;
+$s: 1.6rem;
+html {
+  font-size: 69.8%;
+}
+body {
+  font-size: 1.6rem;
+}
+h1 {
+  font-size: $xl;
+}
+h2 {
+  font-size: $l;
+}
+h3 {
+  font-size: $m;
+}
+h4 {
+  font-size: $s;
+}
+button {
+  font-size: 1.6rem;
+}
+$maxWidth: 900px;
+$heightHeader: 52px;
+$pointBreakTablet: 426px;
+$pointBreakDesktop: 769px;

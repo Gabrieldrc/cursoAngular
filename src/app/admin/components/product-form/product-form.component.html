@@ -1,0 +1,58 @@
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)">
+  <mat-card>
+    <mat-card-header>Producto</mat-card-header>
+    <mat-card-content>
+      <div class="break">
+        <mat-form-field>
+          <mat-label>
+            Titulo
+          </mat-label>
+          <input
+            type="text"
+            matInput
+            formControlName="title"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>
+            Precio
+          </mat-label>
+          <input
+          type="number"
+          matInput
+          formControlName="price"
+          >
+        </mat-form-field>
+        <div *ngIf="priceField.errors && priceField.dirty">
+          <mat-error *ngIf="priceField.hasError('price_invalid')">
+            No te debes pasar de 10000
+          </mat-error>
+          <mat-error *ngIf="priceField.hasError('required')">
+            Este campo es requerido
+          </mat-error>
+        </div>
+      </div>
+      <div>
+        <mat-form-field class="full-width">
+          <mat-label>
+            Descripcion
+          </mat-label>
+          <textarea matInput rows="5" formControlName="description"></textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <img *ngIf="(image$ | async) as image" [src]="image" alt="">
+        <input
+          type="file"
+          (change)="uploadFile($event)"
+          >
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        type="submit"
+      >Guardar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

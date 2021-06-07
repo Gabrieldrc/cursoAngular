@@ -1,0 +1,23 @@
+@use '../../../styles/mixins';
+.mat-card {
+  width: 95%;
+  max-width: 800px;
+  margin: 50px auto;
+}
+.break {
+  display: grid;
+  grid-template-rows: auto;
+}
+.full-wdth {
+  width: 100%;
+}
+img {
+  width: 100%;
+}
+@include mixins.media("tablet") {
+  .break {
+    grid-template-rows: initial;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+  }
+}

@@ -1,0 +1,30 @@
+@use '../../../styles/colors';
+.mat-sidenav-content mat-toolbar, .mat-sidenav {
+  background: colors.$header-bc;
+  &, .mat-toolbar {
+    color: white;
+  }
+}
+.mat-nav-list a {
+  color: inherit;
+  &:active, &:hover, &:focus {
+    color: colors.$green;
+  }
+}
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

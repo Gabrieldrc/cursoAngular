@@ -1,0 +1,35 @@
+@use './colors';
+@use './sizes';
+
+@mixin border-r {
+  border-radius: 5px;
+}
+@mixin marginy-auto {
+  margin: 0 auto;
+}
+@mixin margin-auto {
+  margin: auto;
+}
+@mixin button($color: colors.$blue-l) {
+  background-color: $color;
+  color: white;
+  border: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px;
+  @include border-r;
+}
+@mixin media($screen) {
+  @if $screen == "tablet" {
+    @media screen and (min-width: sizes.$pointBreakTablet) {
+      @content;
+    }
+  } @else if $screen == "desktop" {
+    @media screen and (min-width: sizes.$pointBreakDesktop) {
+      @content;
+    }
+  } @else {
+    @error "Unknown pointBreak #{$screen}.";
+  }
+}

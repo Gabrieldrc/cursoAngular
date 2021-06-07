@@ -1,0 +1,39 @@
+@use '../../../styles/colors';
+@use '../../../styles/mixins';
+
+.example-card {
+  max-width: 400px;
+}
+a {
+  font-size: 1.8rem;
+  color: black;
+  &:hover, &:focus {
+    color: colors.$green;
+  }
+}
+.product-image-container {
+  height: 200px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  & img {
+    height: inherit;
+    width: auto;
+    max-width: 100%;
+  }
+}
+.product-actions {
+  button {
+    background-color: colors.$blue-l;
+    color: white;
+  }
+}
+@include mixins.media("desktop") {
+  .product-image-container {
+    & img {
+      height: auto;
+      width: 100%;
+    }
+  }
+}
