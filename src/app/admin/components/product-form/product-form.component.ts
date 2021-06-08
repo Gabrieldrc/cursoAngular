@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
-import { ProductsService } from 'src/app/core/services/product/products.service';
+import { ProductsService } from '@core/services/product/products.service';
 import { MyValidators } from 'src/app/utils/validators';
 
 @Component({

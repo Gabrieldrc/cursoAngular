@@ -4,9 +4,9 @@ import {
   Output,
   EventEmitter,
   } from '@angular/core';
-import { CartService } from 'src/app/core/services/cart.service';
+import { CartService } from '@core/services/cart.service';
 
-import { Product } from '../../../models/product.models';
+import { Product } from '@core/models/product.models';
 
 @Component({
   selector: 'app-product',
