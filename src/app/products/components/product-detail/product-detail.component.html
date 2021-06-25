@@ -1,7 +1,7 @@
-<section *ngIf="product">
+<section *ngIf="(product$ | async) as product">
   <img [src]="product.image" alt="imagen del producto">
 </section>
-<section *ngIf="product">
+<section *ngIf="(product$ | async) as product">
   <h2>{{product.title}}</h2>
   <span>{{product.price | currency:'EUR'}}</span>
   <p>{{ product.description }}</p>
